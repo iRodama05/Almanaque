@@ -1,10 +1,22 @@
-# Almanaque
+# Almanaque PvZ
+Este es un sistema para gestionar un almanaque de plantas y zombis inspirado en el juego "Plantas vs. Zombis". El programa permite agregar plantas de diferentes tipos (ofensivas, defensivas, especiales) y zombis, visualizarlos en el almanaque, y realizar otras operaciones como la adición de nuevos elementos.
+## Estructura
+El proyecto está compuesto por las siguientes clases principales:
+### Clases Principales:
+Planta: Clase base abstracta para representar las plantas en el juego. Contiene propiedades comunes como nombre, vida, y coste.
+PlantaOfensiva: Derivada de Planta, representa las plantas que infligen daño a los zombis. Incluye la propiedad ataque.
+PlantaDefensiva: Derivada de Planta, representa las plantas que tienen una función defensiva, como la producción de soles o la resistencia a los ataques. Incluye la propiedad funcion.
+PlantaEspecial: Derivada de Planta, representa plantas que tienen efectos especiales, como modificar otras plantas o aplicar efectos a los zombis. Contiene las propiedades modifica_a y efecto.
+Zombie: Representa a los zombis en el juego. Incluye propiedades como nombre, vida, y ataque.
+Almanaque: Clase encargada de gestionar las plantas y zombis en el juego. Permite agregar elementos al almanaque, mostrar información de las plantas y zombis, y gestionar las relaciones entre ellos.
+### Relaciones entre clases:
+PlantaEspecial puede depender de una planta base específica (por ejemplo, un Girasol), lo que significa que una planta especial debe plantarse sobre una planta base específica.
+La relación entre PlantaEspecial y PlantaBase (como PlantaOfensiva o PlantaDefensiva) tiene una multiplicidad de 1..1 en el lado de la planta especial, y 0..1 en el lado de la planta base.
+## Funcionalidades
+El programa permite realizar las siguientes operaciones:
 
-El propósito de este código es desarrollar un programa que funcione como un almanaque o enciclopedia interactiva inspirado en el juego Plants vs Zombies. Este almanaque proporcionará una base de datos detallada sobre las plantas, los zombies y los potenciadores del juego, mostrando información esencial como los puntos de vida, el daño, el coste de recursos y los efectos de potenciación sobre los personajes.
+• Ver las plantas por categoría (Ofensivas, Defensivas, Especiales).
 
-La funcionalidad principal del programa permitirá al usuario navegar a través de una serie de menús interactivos. Estos menús estarán organizados en tres secciones principales: plantas, zombies y potenciadores. Al ingresar a cada sección, se mostrará una lista completa de los elementos correspondientes, facilitando la navegación y la selección de los personajes o potenciadores específicos. Una vez seleccionado un elemento en particular, el programa desplegará toda la información relevante sobre él, como:
+• Ver todos los zombis disponibles.
 
-El objetivo es que el usuario pueda utilizar el almanaque para explorar y consultar rápidamente información sobre los distintos personajes y potenciadores de Plants vs Zombies, lo que resultará útil para planificar estrategias y conocer en profundidad las habilidades y limitaciones de cada elemento. La estructura de menús está pensada para ser intuitiva y fácil de navegar, proporcionando una experiencia interactiva y agradable.
-
-Además, se podrían añadir futuras mejoras, como la opción de filtrar los elementos según sus características (por ejemplo, mostrar solo las plantas defensivas o los zombies que superan cierto nivel de daño) y la capacidad de marcar elementos como favoritos para acceder rápidamente a ellos en consultas futuras.
-
+• Agregar nuevas plantas y zombis al almanaque.
